@@ -2,19 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nthoppa Ecosystem</title>
+    <title>Nthoppa Debug</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">If you see this, the React app isn't loading yet.</div>
     <script type="module">
       import React from 'react';
       import ReactDOM from 'react-dom/client';
       import App from './NthoppaEcosystem.jsx';
 
-      ReactDOM.createRoot(document.getElementById('root')).render(
-        React.createElement(App)
-      );
+      try {
+        ReactDOM.createRoot(document.getElementById('root')).render(
+          React.createElement(App)
+        );
+      } catch (err) {
+        console.error("React Render Error:", err);
+      }
     </script>
   </body>
 </html>
